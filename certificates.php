@@ -25,16 +25,16 @@ $certificates = $pdo->query("SELECT * FROM certificates ORDER BY year DESC, id D
                     <div class="card h-100 border-0 cert-card shadow-lg" style="background: rgba(255,255,255,0.02); border-radius: 16px; overflow: hidden; transition: transform 0.3s ease;">
                         
                         <!-- Certificate Image (Clickable for Modal) -->
-                        <div class="cert-img-wrapper position-relative" style="background: #ffffff; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05);" data-bs-toggle="modal" data-bs-target="#certModal<?= $c['id'] ?>">
+                        <div class="cert-img-wrapper position-relative" style="background: #ffffff; cursor: pointer; border-bottom: 1px solid rgba(255,255,255,0.05); height: 300px; overflow: hidden;" data-bs-toggle="modal" data-bs-target="#certModal<?= $c['id'] ?>">
                             <?php if(!empty($c['image_path'])): 
                                 $img_src = $c['image_path'];
                                 if (BASE_URL === '/' && strpos($img_src, '/andrew/') === 0) {
                                     $img_src = substr($img_src, 7);
                                 }
                             ?>
-                                <img src="<?= htmlspecialchars($img_src) ?>" class="w-100" style="height: auto; object-fit: contain;" alt="Certificate">
+                                <img src="<?= htmlspecialchars($img_src) ?>" class="w-100 h-100" style="object-fit: cover;" alt="Certificate">
                             <?php else: ?>
-                                <div style="height: 250px; display: flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.02);">
+                                <div class="w-100 h-100 d-flex align-items-center justify-content-center" style="background: rgba(255,255,255,0.02);">
                                     <i class="fa-solid fa-certificate text-muted" style="font-size: 5rem; opacity: 0.2;"></i>
                                 </div>
                             <?php endif; ?>
