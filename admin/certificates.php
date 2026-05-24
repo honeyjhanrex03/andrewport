@@ -1,6 +1,6 @@
 <?php
 require_once 'includes/header.php';
-function uploadFile($fileInput, $uploadDir = '../assets/images/') {
+function uploadFile(string $fileInput, string $uploadDir = '../assets/images/') {
     if (isset($_FILES[$fileInput]) && $_FILES[$fileInput]['error'] == 0) {
         $ext = pathinfo($_FILES[$fileInput]['name'], PATHINFO_EXTENSION);
         $filename = uniqid() . '.' . $ext;

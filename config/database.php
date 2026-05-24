@@ -21,7 +21,7 @@ if ($is_local) {
 define('BASE_URL', $is_local ? '/andrew/' : '/');
 
 // Universal helper function to normalize asset paths from database
-function get_asset_url($path) {
+function get_asset_url(string $path) {
     if (empty($path)) return '';
     if (preg_match('/(assets|resume)\/.*$/i', $path, $matches)) {
         return BASE_URL . $matches[0];
