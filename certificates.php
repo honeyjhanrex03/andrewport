@@ -26,8 +26,13 @@ $certificates = $pdo->query("SELECT * FROM certificates ORDER BY year DESC, id D
                         
                         <!-- Certificate Image (Clickable for Modal) -->
                         <div class="cert-img-wrapper" style="background: #ffffff; padding: 20px; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal<?= $c['id'] ?>">
-                            <?php if(!empty($c['image_path'])): ?>
-                                <img src="<?= htmlspecialchars(get_asset_url($c['image_path'])) ?>" class="img-fluid" style="max-height: 280px; object-fit: contain; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 4px;" alt="Certificate">
+                            <?php if(!empty($c['image_path'])): 
+                                $img_src = $c['image_path'];
+                                if (BASE_URL === '/' && strpos($img_src, '/andrew/') === 0) {
+                                    $img_src = substr($img_src, 7);
+                                }
+                            ?>
+                                <img src="<?= htmlspecialchars($img_src) ?>" class="img-fluid" style="max-height: 280px; object-fit: contain; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 4px;" alt="Certificate">
                             <?php else: ?>
                                 <div style="height: 280px; display: flex; align-items: center; justify-content: center;">
                                     <i class="fa-solid fa-certificate text-muted" style="font-size: 5rem; opacity: 0.2;"></i>
@@ -85,8 +90,13 @@ $certificates = $pdo->query("SELECT * FROM certificates ORDER BY year DESC, id D
                             <button type="button" class="btn-close btn-close-white shadow-none bg-dark rounded-circle p-3" data-bs-dismiss="modal" aria-label="Close" style="opacity: 0.8;"></button>
                         </div>
                         <div class="modal-body p-0 d-flex justify-content-center align-items-center" style="height: 100vh;">
-                            <?php if(!empty($c['image_path'])): ?>
-                                <img src="<?= htmlspecialchars(get_asset_url($c['image_path'])) ?>" class="img-fluid shadow-lg" alt="Certificate Full View" style="max-height: 90vh; max-width: 95vw; object-fit: contain;">
+                            <?php if(!empty($c['image_path'])): 
+                                $img_src = $c['image_path'];
+                                if (BASE_URL === '/' && strpos($img_src, '/andrew/') === 0) {
+                                    $img_src = substr($img_src, 7);
+                                }
+                            ?>
+                                <img src="<?= htmlspecialchars($img_src) ?>" class="img-fluid shadow-lg" alt="Certificate Full View" style="max-height: 90vh; max-width: 95vw; object-fit: contain;">
                             <?php endif; ?>
                         </div>
                     </div>
