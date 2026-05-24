@@ -69,7 +69,15 @@ $certs = $pdo->query("SELECT * FROM certificates ORDER BY id DESC")->fetchAll();
                         <option value="January">January</option>
                         <option value="February">February</option>
                         <option value="March">March</option>
-                        <!-- add others as needed -->
+                        <option value="April">April</option>
+                        <option value="May">May</option>
+                        <option value="June">June</option>
+                        <option value="July">July</option>
+                        <option value="August">August</option>
+                        <option value="September">September</option>
+                        <option value="October">October</option>
+                        <option value="November">November</option>
+                        <option value="December">December</option>
                     </select>
                 </div>
                 <div class="col-md-3 mb-3">
@@ -148,7 +156,16 @@ $certs = $pdo->query("SELECT * FROM certificates ORDER BY id DESC")->fetchAll();
                         </div>
                         <div class="col-md-3 mb-3">
                             <label class="form-label text-dark fw-bold small">Month</label>
-                            <input type="text" name="month" class="form-control bg-light border" style="border-radius: 8px; padding: 10px 15px;" value="<?= htmlspecialchars($c['month'] ?? '') ?>">
+                            <select name="month" class="form-control bg-light border" style="border-radius: 8px; padding: 10px 15px;">
+                                <option value="">Select Month</option>
+                                <?php
+                                $months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+                                foreach($months as $m) {
+                                    $selected = ($c['month'] == $m) ? 'selected' : '';
+                                    echo "<option value=\"$m\" $selected>$m</option>";
+                                }
+                                ?>
+                            </select>
                         </div>
                         <div class="col-md-3 mb-3">
                             <label class="form-label text-dark fw-bold small">Year</label>
