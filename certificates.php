@@ -79,14 +79,14 @@ $certificates = $pdo->query("SELECT * FROM certificates ORDER BY year DESC, id D
         <?php foreach($certificates as $c): ?>
             <!-- Fullscreen Image Modal for this Certificate -->
             <div class="modal fade" id="certModal<?= $c['id'] ?>" tabindex="-1" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered modal-xl">
-                    <div class="modal-content border-0" style="background: transparent;">
-                        <div class="modal-header border-0 pb-0 position-absolute top-0 end-0 z-3" style="padding: 1rem;">
-                            <button type="button" class="btn-close btn-close-white shadow-none bg-dark rounded-circle p-2" data-bs-dismiss="modal" aria-label="Close" style="opacity: 0.8;"></button>
+                <div class="modal-dialog modal-fullscreen">
+                    <div class="modal-content border-0" style="background: rgba(15, 17, 21, 0.95);">
+                        <div class="modal-header border-0 position-absolute top-0 end-0 z-3" style="padding: 1.5rem;">
+                            <button type="button" class="btn-close btn-close-white shadow-none bg-dark rounded-circle p-3" data-bs-dismiss="modal" aria-label="Close" style="opacity: 0.8;"></button>
                         </div>
-                        <div class="modal-body p-0 text-center">
+                        <div class="modal-body p-0 d-flex justify-content-center align-items-center" style="height: 100vh;">
                             <?php if(!empty($c['image_path'])): ?>
-                                <img src="<?= htmlspecialchars(get_asset_url($c['image_path'])) ?>" class="img-fluid rounded shadow-lg" alt="Certificate Full View" style="max-height: 90vh;">
+                                <img src="<?= htmlspecialchars(get_asset_url($c['image_path'])) ?>" class="img-fluid shadow-lg" alt="Certificate Full View" style="max-height: 90vh; max-width: 95vw; object-fit: contain;">
                             <?php endif; ?>
                         </div>
                     </div>
