@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 24, 2026 at 03:53 AM
+-- Generation Time: May 24, 2026 at 04:29 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -164,7 +164,23 @@ INSERT INTO `page_views` (`id`, `ip_address`, `page`, `created_at`) VALUES
 (29, '::1', 'Home', '2026-05-24 01:44:02'),
 (30, '::1', 'about.php', '2026-05-24 01:45:28'),
 (31, '::1', 'portfolio.php', '2026-05-24 01:45:43'),
-(32, '::1', 'contact.php', '2026-05-24 01:45:44');
+(32, '::1', 'contact.php', '2026-05-24 01:45:44'),
+(33, '::1', 'about.php', '2026-05-24 01:55:57'),
+(34, '::1', 'certificates.php', '2026-05-24 01:55:58'),
+(35, '::1', 'services.php', '2026-05-24 01:55:58'),
+(36, '::1', 'portfolio.php', '2026-05-24 01:55:59'),
+(37, '::1', 'contact.php', '2026-05-24 01:55:59'),
+(38, '::1', 'Home', '2026-05-24 01:56:00'),
+(39, '::1', 'contact.php', '2026-05-24 02:01:08'),
+(40, '::1', 'Home', '2026-05-24 02:08:13'),
+(41, '::1', 'about.php', '2026-05-24 02:08:23'),
+(42, '::1', 'skills.php', '2026-05-24 02:08:25'),
+(43, '::1', 'certificates.php', '2026-05-24 02:10:27'),
+(44, '::1', 'Home', '2026-05-24 02:19:34'),
+(45, '::1', 'about.php', '2026-05-24 02:19:36'),
+(46, '::1', 'skills.php', '2026-05-24 02:19:36'),
+(47, '::1', 'certificates.php', '2026-05-24 02:19:37'),
+(48, '::1', 'services.php', '2026-05-24 02:19:37');
 
 -- --------------------------------------------------------
 
@@ -384,13 +400,13 @@ ALTER TABLE `experiences`
 -- AUTO_INCREMENT for table `messages`
 --
 ALTER TABLE `messages`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `page_views`
 --
 ALTER TABLE `page_views`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 
 --
 -- AUTO_INCREMENT for table `portfolio`
