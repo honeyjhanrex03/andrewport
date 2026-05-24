@@ -202,7 +202,7 @@ $projects = $pdo->query("SELECT * FROM portfolio ORDER BY id DESC")->fetchAll();
                         <input type="file" name="main_image" class="form-control bg-light border" style="border-radius: 8px; padding: 8px 15px;" accept="image/*">
                         <?php if(!empty($p['image_path'])): ?>
                             <div class="mt-2 p-2 border rounded bg-light d-inline-block">
-                                <img src="<?= htmlspecialchars(str_replace('/andrew/', BASE_URL, $p['image_path'])) ?>" style="height: 40px;">
+                                <img src="<?= htmlspecialchars(get_asset_url($p['image_path'])) ?>" style="height: 40px;">
                                 <span class="small ms-2 text-muted">Current Main</span>
                             </div>
                         <?php endif; ?>
@@ -219,7 +219,7 @@ $projects = $pdo->query("SELECT * FROM portfolio ORDER BY id DESC")->fetchAll();
                             <div class="mt-2 p-2 border rounded bg-light">
                                 <span class="d-block small text-muted mb-2">Current Additional Images:</span>
                                 <?php foreach($current_additional as $img): ?>
-                                    <img src="<?= htmlspecialchars(str_replace('/andrew/', BASE_URL, $img)) ?>" class="me-2 rounded border" style="height: 40px; width: 40px; object-fit: cover;">
+                                    <img src="<?= htmlspecialchars(get_asset_url($img)) ?>" class="me-2 rounded border" style="height: 40px; width: 40px; object-fit: cover;">
                                 <?php endforeach; ?>
                             </div>
                         <?php endif; ?>
@@ -236,4 +236,5 @@ $projects = $pdo->query("SELECT * FROM portfolio ORDER BY id DESC")->fetchAll();
 <?php endforeach; ?>
 
 <?php require_once 'includes/footer.php'; ?>
+
 

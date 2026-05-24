@@ -134,3 +134,4 @@ $certificates = $pdo->query("SELECT * FROM certificates ORDER BY year DESC, id D
 
 <?php require_once 'includes/footer.php'; ?>
 
+

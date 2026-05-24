@@ -137,18 +137,18 @@ $skills = $pdo->query("SELECT * FROM skills ORDER BY id DESC")->fetchAll();
                     <div class="row">
                         <div class="col-md-12 mb-4">
                             <label class="form-label text-dark fw-bold small">OR Enter Icon Class/URL</label>
-                            <input type="text" name="icon_class" class="form-control bg-light border" style="border-radius: 8px; padding: 10px 15px;" value="<?= (isset($s['icon_type']) && $s['icon_type'] == 'class') ? htmlspecialchars(str_replace('/andrew/', BASE_URL, $s['icon_value'])) : '' ?>">
+                            <input type="text" name="icon_class" class="form-control bg-light border" style="border-radius: 8px; padding: 10px 15px;" value="<?= (isset($s['icon_type']) && $s['icon_type'] == 'class') ? htmlspecialchars(get_asset_url($s['icon_value'])) : '' ?>">
                         </div>
                     </div>
                     <?php if(!empty($s['icon_value'])): ?>
                     <div class="mb-4 p-3 bg-white rounded border text-center shadow-sm">
                         <span class="d-block small text-muted mb-2 fw-bold">CURRENT ICON / IMAGE</span>
                         <?php if(isset($s['icon_type']) && $s['icon_type'] == 'image'): ?>
-                            <img src="<?= htmlspecialchars(str_replace('/andrew/', BASE_URL, $s['icon_value'])) ?>" style="height: 40px; max-width: 100%; object-fit: contain;">
-                            <div class="small text-muted mt-2 text-break" style="font-size: 0.7rem;"><?= htmlspecialchars(str_replace('/andrew/', BASE_URL, $s['icon_value'])) ?></div>
+                            <img src="<?= htmlspecialchars(get_asset_url($s['icon_value'])) ?>" style="height: 40px; max-width: 100%; object-fit: contain;">
+                            <div class="small text-muted mt-2 text-break" style="font-size: 0.7rem;"><?= htmlspecialchars(get_asset_url($s['icon_value'])) ?></div>
                         <?php else: ?>
-                            <i class="<?= htmlspecialchars(str_replace('/andrew/', BASE_URL, $s['icon_value'])) ?> fs-3 text-dark"></i>
-                            <div class="small text-muted mt-2 fw-bold"><?= htmlspecialchars(str_replace('/andrew/', BASE_URL, $s['icon_value'])) ?></div>
+                            <i class="<?= htmlspecialchars(get_asset_url($s['icon_value'])) ?> fs-3 text-dark"></i>
+                            <div class="small text-muted mt-2 fw-bold"><?= htmlspecialchars(get_asset_url($s['icon_value'])) ?></div>
                         <?php endif; ?>
                     </div>
                     <?php endif; ?>
@@ -163,4 +163,5 @@ $skills = $pdo->query("SELECT * FROM skills ORDER BY id DESC")->fetchAll();
 </div>
 <?php endforeach; ?>
 <?php require_once 'includes/footer.php'; ?>
+
 

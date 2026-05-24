@@ -107,7 +107,7 @@ $services = $pdo->query("SELECT * FROM services ORDER BY id DESC")->fetchAll();
                         <td class="ps-4 py-3">
                             <div class="bg-light rounded d-flex align-items-center justify-content-center" style="width:50px; height:50px;">
                                 <?php if(isset($s['icon_type']) && $s['icon_type'] == 'image' && !empty($s['icon_image'])): ?>
-                                    <img src="<?= htmlspecialchars(str_replace('/andrew/', BASE_URL, $s['icon_image'])) ?>" style="max-width:100%; max-height:100%;">
+                                    <img src="<?= htmlspecialchars(get_asset_url($s['icon_image'])) ?>" style="max-width:100%; max-height:100%;">
                                 <?php else: ?>
                                     <i class="<?= htmlspecialchars($s['icon']) ?> fs-4 text-dark"></i>
                                 <?php endif; ?>
@@ -170,8 +170,8 @@ $services = $pdo->query("SELECT * FROM services ORDER BY id DESC")->fetchAll();
                     <div class="mb-4 p-3 bg-white rounded border text-center shadow-sm">
                         <span class="d-block small text-muted mb-2 fw-bold">CURRENT ICON / IMAGE</span>
                         <?php if(isset($s['icon_type']) && $s['icon_type'] == 'image'): ?>
-                            <img src="<?= htmlspecialchars(str_replace('/andrew/', BASE_URL, $s['icon_image'])) ?>" style="height: 40px; max-width: 100%; object-fit: contain;">
-                            <div class="small text-muted mt-2 text-break" style="font-size: 0.7rem;"><?= htmlspecialchars(str_replace('/andrew/', BASE_URL, $s['icon_image'])) ?></div>
+                            <img src="<?= htmlspecialchars(get_asset_url($s['icon_image'])) ?>" style="height: 40px; max-width: 100%; object-fit: contain;">
+                            <div class="small text-muted mt-2 text-break" style="font-size: 0.7rem;"><?= htmlspecialchars(get_asset_url($s['icon_image'])) ?></div>
                         <?php else: ?>
                             <i class="<?= htmlspecialchars($s['icon']) ?> fs-3 text-dark"></i>
                             <div class="small text-muted mt-2 fw-bold"><?= htmlspecialchars($s['icon']) ?></div>
@@ -194,4 +194,5 @@ $services = $pdo->query("SELECT * FROM services ORDER BY id DESC")->fetchAll();
 <?php endforeach; ?>
 
 <?php require_once 'includes/footer.php'; ?>
+
 

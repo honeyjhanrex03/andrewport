@@ -180,3 +180,4 @@ $certs = $pdo->query("SELECT * FROM certificates ORDER BY id DESC")->fetchAll();
 </div>
 <?php endforeach; ?>
 <?php require_once 'includes/footer.php'; ?>
+

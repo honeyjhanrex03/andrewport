@@ -69,7 +69,7 @@ if (!$profile) {
             <div class="row mb-4 align-items-center">
                 <div class="col-md-3 text-center">
                     <?php if(!empty($profile['profile_image'])): ?>
-                        <img src="<?= htmlspecialchars(str_replace('/andrew/', BASE_URL, $profile['profile_image'])) ?>" class="rounded-circle shadow" style="width: 150px; height: 150px; object-fit: cover; border: 4px solid var(--admin-bg);">
+                        <img src="<?= htmlspecialchars(get_asset_url($profile['profile_image'])) ?>" class="rounded-circle shadow" style="width: 150px; height: 150px; object-fit: cover; border: 4px solid var(--admin-bg);">
                     <?php else: ?>
                         <div class="rounded-circle shadow d-flex align-items-center justify-content-center mx-auto" style="width: 150px; height: 150px; background: #e9ecef; border: 4px solid var(--admin-bg);">
                             <i class="fa-solid fa-user text-secondary" style="font-size: 4rem;"></i>
@@ -136,7 +136,7 @@ if (!$profile) {
                 <input type="file" name="cv_file" class="form-control mb-2" accept=".pdf,.doc,.docx">
                 <?php if(!empty($profile['cv_path'])): ?>
                     <div class="small text-muted mt-2">
-                        <i class="fa-solid fa-file-pdf text-danger me-1"></i> Current CV: <a href="<?= htmlspecialchars(str_replace('/andrew/', BASE_URL, $profile['cv_path'])) ?>" target="_blank" class="fw-bold"><?= basename($profile['cv_path']) ?></a>
+                        <i class="fa-solid fa-file-pdf text-danger me-1"></i> Current CV: <a href="<?= htmlspecialchars(get_asset_url($profile['cv_path'])) ?>" target="_blank" class="fw-bold"><?= basename($profile['cv_path']) ?></a>
                     </div>
                 <?php endif; ?>
             </div>
@@ -149,5 +149,6 @@ if (!$profile) {
 </div>
 
 <?php require_once 'includes/footer.php'; ?>
+
 
 

@@ -1,6 +1,7 @@
 <?php
 // Database configuration - Environment Aware
-$is_local = in_array($_SERVER['HTTP_HOST'] ?? 'localhost', ['localhost', '127.0.0.1']);
+$http_host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+$is_local = (strpos($http_host, 'localhost') !== false || strpos($http_host, '127.0.0.1') !== false);
 
 if ($is_local) {
     // Local XAMPP Environment
@@ -18,6 +19,15 @@ if ($is_local) {
 
 // Define dynamic base URL for assets and routing
 define('BASE_URL', $is_local ? '/andrew/' : '/');
+
+// Universal helper function to normalize asset paths from database
+function get_asset_url($path) {
+    if (empty($path)) return '';
+    if (preg_match('/(assets|resume)\/.*$/i', $path, $matches)) {
+        return BASE_URL . $matches[0];
+    }
+    return $path;
+}
 
 try {
     $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
