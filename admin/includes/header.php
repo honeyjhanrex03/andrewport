@@ -13,7 +13,7 @@ $current_page = basename($_SERVER['PHP_SELF'], '.php');
 // Fetch profile for header avatar
 $profile_stmt = $pdo->query("SELECT profile_image FROM profile LIMIT 1");
 $admin_profile = $profile_stmt->fetch();
-$admin_avatar = (!empty($admin_profile['profile_image'])) ? $admin_profile['profile_image'] : 'https://ui-avatars.com/api/?name=Admin&background=1e212b&color=ff6b57';
+$admin_avatar = (!empty($admin_profile['profile_image'])) ? str_replace('/andrew/', BASE_URL, $admin_profile['profile_image']) : 'https://ui-avatars.com/api/?name=Admin&background=1e212b&color=ff6b57';
 
 ?>
 <!DOCTYPE html>
