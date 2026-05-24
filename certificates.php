@@ -27,7 +27,7 @@ $certificates = $pdo->query("SELECT * FROM certificates ORDER BY year DESC, id D
                         <!-- Certificate Image (Clickable for Modal) -->
                         <div class="cert-img-wrapper" style="background: #ffffff; padding: 20px; display: flex; justify-content: center; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.05); cursor: pointer;" data-bs-toggle="modal" data-bs-target="#certModal<?= $c['id'] ?>">
                             <?php if(!empty($c['image_path'])): ?>
-                                <img src="<?= htmlspecialchars($c['image_path']) ?>" class="img-fluid" style="max-height: 280px; object-fit: contain; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 4px;" alt="Certificate">
+                                <img src="<?= htmlspecialchars(get_asset_url($c['image_path'])) ?>" class="img-fluid" style="max-height: 280px; object-fit: contain; box-shadow: 0 4px 15px rgba(0,0,0,0.1); border-radius: 4px;" alt="Certificate">
                             <?php else: ?>
                                 <div style="height: 280px; display: flex; align-items: center; justify-content: center;">
                                     <i class="fa-solid fa-certificate text-muted" style="font-size: 5rem; opacity: 0.2;"></i>
@@ -72,22 +72,27 @@ $certificates = $pdo->query("SELECT * FROM certificates ORDER BY year DESC, id D
                     </div>
                 </div>
 
-                <!-- Fullscreen Image Modal for this Certificate -->
-                <div class="modal fade" id="certModal<?= $c['id'] ?>" tabindex="-1" aria-hidden="true">
-                    <div class="modal-dialog modal-dialog-centered modal-xl">
-                        <div class="modal-content border-0" style="background: transparent;">
-                            <div class="modal-header border-0 pb-0 position-absolute top-0 end-0 z-3" style="padding: 1rem;">
-                                <button type="button" class="btn-close btn-close-white shadow-none bg-dark rounded-circle p-2" data-bs-dismiss="modal" aria-label="Close" style="opacity: 0.8;"></button>
-                            </div>
-                            <div class="modal-body p-0 text-center">
-                                <?php if(!empty($c['image_path'])): ?>
-                                    <img src="<?= htmlspecialchars($c['image_path']) ?>" class="img-fluid rounded shadow-lg" alt="Certificate Full View" style="max-height: 90vh;">
-                                <?php endif; ?>
-                            </div>
+            <?php endforeach; ?>
+        </div> <!-- End of Masonry Grid -->
+
+        <!-- Modals outside Masonry grid -->
+        <?php foreach($certificates as $c): ?>
+            <!-- Fullscreen Image Modal for this Certificate -->
+            <div class="modal fade" id="certModal<?= $c['id'] ?>" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered modal-xl">
+                    <div class="modal-content border-0" style="background: transparent;">
+                        <div class="modal-header border-0 pb-0 position-absolute top-0 end-0 z-3" style="padding: 1rem;">
+                            <button type="button" class="btn-close btn-close-white shadow-none bg-dark rounded-circle p-2" data-bs-dismiss="modal" aria-label="Close" style="opacity: 0.8;"></button>
+                        </div>
+                        <div class="modal-body p-0 text-center">
+                            <?php if(!empty($c['image_path'])): ?>
+                                <img src="<?= htmlspecialchars(get_asset_url($c['image_path'])) ?>" class="img-fluid rounded shadow-lg" alt="Certificate Full View" style="max-height: 90vh;">
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
-            <?php endforeach; ?>
+            </div>
+        <?php endforeach; ?>
 
             <?php if(empty($certificates)): ?>
                 <div class="col-12 text-center py-5">
