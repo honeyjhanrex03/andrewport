@@ -41,7 +41,7 @@ if (!$profile) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($profile['name']) ?> | Portfolio</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/andrew/assets/images/logo.png?v=<?= time() ?>">
+    <link rel="icon" type="image/png" href="<?= BASE_URL ?>assets/images/logo.png?v=<?= time() ?>">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome for icons -->
@@ -49,28 +49,29 @@ if (!$profile) {
     <!-- SweetAlert2 -->
     <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.min.css" rel="stylesheet">
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="/andrew/assets/css/style.css?v=<?= time() ?>">
+    <link rel="stylesheet" href="<?= BASE_URL ?>assets/css/style.css?v=<?= time() ?>">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="/andrew/">
-                <img src="/andrew/assets/images/logo.png?v=<?= time() ?>" alt="Andrew Logo" height="45" style="object-fit: contain; border-radius: 4px; border-radius: 50%;">
+            <a class="navbar-brand" href="<?= BASE_URL ?>">
+                <img src="<?= BASE_URL ?>assets/images/logo.png?v=<?= time() ?>" alt="Andrew Logo" height="45" style="object-fit: contain; border-radius: 4px; border-radius: 50%;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" style="border-color: rgba(255,255,255,0.1);">
                 <span class="navbar-toggler-icon" style="background-image: url('data:image/svg+xml;charset=utf8,%3Csvg viewBox=\'0 0 30 30\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath stroke=\'rgba(255, 255, 255, 1)\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-miterlimit=\'10\' d=\'M4 7h22M4 15h22M4 23h22\'/%3E%3C/svg%3E');"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="/andrew/">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/andrew/about">About Us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/andrew/skills">Skills</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/andrew/certificates">Certificates</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/andrew/services">Services</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/andrew/portfolio">Portfolio</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/andrew/contact">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>about">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>skills">Skills</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>certificates">Certificates</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>portfolio">Portfolio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="<?= BASE_URL ?>contact">Contact Us</a></li>
                 </ul>
             </div>
         </div>
     </nav>
+

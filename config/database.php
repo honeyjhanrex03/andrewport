@@ -16,6 +16,9 @@ if ($is_local) {
     define('DB_NAME', 'if0_42004841_andrew_portfolio_db');
 }
 
+// Define dynamic base URL for assets and routing
+define('BASE_URL', $is_local ? '/andrew/' : '/');
+
 try {
     $pdo = new PDO("mysql:host=" . DB_HOST . ";dbname=" . DB_NAME, DB_USER, DB_PASS);
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

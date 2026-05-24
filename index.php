@@ -16,11 +16,11 @@ $skills = $skills_stmt->fetchAll();
                     <?= htmlspecialchars(substr($profile['objective'], 0, 160)) ?>... Looking to use analytical and IT skills in a professional setting.
                 </p>
                 <div class="d-flex gap-3">
-                    <a href="/andrew/contact" class="btn-accent">Got a project?</a>
+                    <a href="<?= BASE_URL ?>contact" class="btn-accent">Got a project?</a>
                     <?php if(!empty($profile['cv_path'])): ?>
-                        <a href="/andrew/view_cv" target="_blank" class="btn-outline-light"><i class="fa-solid fa-file-pdf me-2 text-danger"></i> View CV</a>
+                        <a href="<?= BASE_URL ?>view_cv" target="_blank" class="btn-outline-light"><i class="fa-solid fa-file-pdf me-2 text-danger"></i> View CV</a>
                     <?php else: ?>
-                        <a href="/andrew/about" class="btn-outline-light">My resume</a>
+                        <a href="<?= BASE_URL ?>about" class="btn-outline-light">My resume</a>
                     <?php endif; ?>
                 </div>
             </div>
@@ -68,3 +68,4 @@ $skills = $skills_stmt->fetchAll();
 </section>
 
 <?php require_once 'includes/footer.php'; ?>
+

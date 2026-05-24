@@ -18,10 +18,14 @@ document.addEventListener('DOMContentLoaded', function() {
     
     navLinks.forEach(link => {
         const href = link.getAttribute('href');
-        if (currentPath === href || currentPath === href + '/' || currentPath + '/' === href) {
-            link.classList.add('active');
-        } else if (currentPath.startsWith('/andrew') && href !== '/andrew/' && currentPath.includes(href)) {
+        // Handle root link specifically to prevent it from matching everything
+        if (href === '/' || href === '/andrew/') {
+            if (currentPath === href || currentPath === href + 'index.php') {
+                link.classList.add('active');
+            }
+        } else if (currentPath.includes(href)) {
             link.classList.add('active');
         }
     });
 });
+

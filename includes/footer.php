@@ -3,8 +3,8 @@
         <div class="container">
             <div class="row g-4 mb-5">
                 <div class="col-lg-4 col-md-6 pr-lg-5">
-                    <a href="/andrew/" class="d-inline-block mb-4">
-                        <img src="/andrew/assets/images/logo.png" alt="<?= htmlspecialchars($profile['name'] ?? 'Logo') ?>" height="40" style="object-fit: contain; border-radius: 4px;">
+                    <a href="<?= BASE_URL ?>" class="d-inline-block mb-4">
+                        <img src="<?= BASE_URL ?>assets/images/logo.png" alt="<?= htmlspecialchars($profile['name'] ?? 'Logo') ?>" height="40" style="object-fit: contain; border-radius: 4px;">
                     </a>
                     <p class="mb-4" style="color: var(--text-color); line-height: 1.8;">
                         <?= htmlspecialchars(isset($profile['objective']) ? substr($profile['objective'], 0, 120) . '...' : 'A passionate Information Systems Student specializing in UI Design and Data Encoding.') ?>
@@ -22,20 +22,20 @@
                 <div class="col-lg-2 col-md-6">
                     <h5 class="text-white mb-4">Quick Links</h5>
                     <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
-                        <li><a href="/andrew/" class="text-decoration-none" style="color: var(--text-color); transition: 0.3s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-color)'">Home</a></li>
-                        <li><a href="/andrew/about" class="text-decoration-none" style="color: var(--text-color); transition: 0.3s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-color)'">About Us</a></li>
-                        <li><a href="/andrew/services" class="text-decoration-none" style="color: var(--text-color); transition: 0.3s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-color)'">Services</a></li>
-                        <li><a href="/andrew/portfolio" class="text-decoration-none" style="color: var(--text-color); transition: 0.3s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-color)'">Portfolio</a></li>
+                        <li><a href="<?= BASE_URL ?>" class="text-decoration-none" style="color: var(--text-color); transition: 0.3s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-color)'">Home</a></li>
+                        <li><a href="<?= BASE_URL ?>about" class="text-decoration-none" style="color: var(--text-color); transition: 0.3s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-color)'">About Us</a></li>
+                        <li><a href="<?= BASE_URL ?>services" class="text-decoration-none" style="color: var(--text-color); transition: 0.3s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-color)'">Services</a></li>
+                        <li><a href="<?= BASE_URL ?>portfolio" class="text-decoration-none" style="color: var(--text-color); transition: 0.3s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-color)'">Portfolio</a></li>
                     </ul>
                 </div>
                 
                 <div class="col-lg-3 col-md-6">
                     <h5 class="text-white mb-4">Services</h5>
                     <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
-                        <li><a href="/andrew/services" class="text-decoration-none" style="color: var(--text-color); transition: 0.3s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-color)'">UI/UX Design</a></li>
-                        <li><a href="/andrew/services" class="text-decoration-none" style="color: var(--text-color); transition: 0.3s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-color)'">Data Encoding</a></li>
-                        <li><a href="/andrew/services" class="text-decoration-none" style="color: var(--text-color); transition: 0.3s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-color)'">Administrative Support</a></li>
-                        <li><a href="/andrew/services" class="text-decoration-none" style="color: var(--text-color); transition: 0.3s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-color)'">System Analysis</a></li>
+                        <li><a href="<?= BASE_URL ?>services" class="text-decoration-none" style="color: var(--text-color); transition: 0.3s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-color)'">UI/UX Design</a></li>
+                        <li><a href="<?= BASE_URL ?>services" class="text-decoration-none" style="color: var(--text-color); transition: 0.3s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-color)'">Data Encoding</a></li>
+                        <li><a href="<?= BASE_URL ?>services" class="text-decoration-none" style="color: var(--text-color); transition: 0.3s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-color)'">Administrative Support</a></li>
+                        <li><a href="<?= BASE_URL ?>services" class="text-decoration-none" style="color: var(--text-color); transition: 0.3s;" onmouseover="this.style.color='var(--accent-color)'" onmouseout="this.style.color='var(--text-color)'">System Analysis</a></li>
                     </ul>
                 </div>
                 
@@ -75,7 +75,7 @@
     <!-- SweetAlert2 -->
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.3/dist/sweetalert2.all.min.js"></script>
     <!-- Custom JS -->
-    <script src="/andrew/assets/js/main.js?v=<?= time() ?>"></script>
+    <script src="<?= BASE_URL ?>assets/js/main.js?v=<?= time() ?>"></script>
     
     <script>
     <?php if(isset($sweet_success)): ?>
@@ -101,3 +101,4 @@
     </script>
 </body>
 </html>
+

@@ -23,7 +23,7 @@ $admin_avatar = (!empty($admin_profile['profile_image'])) ? $admin_profile['prof
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard | Portfolio</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/andrew/assets/images/logo.png?v=<?= time() ?>">
+    <link rel="icon" type="image/png" href="<?= BASE_URL ?>assets/images/logo.png?v=<?= time() ?>">
     <!-- Bootstrap 5 CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -68,7 +68,7 @@ $admin_avatar = (!empty($admin_profile['profile_image'])) ? $admin_profile['prof
         <!-- Sidebar -->
         <div id="sidebar-wrapper">
             <div class="sidebar-heading fw-bold text-center d-flex align-items-center justify-content-center gap-2">
-                <img src="/andrew/assets/images/logo.png" alt="Logo" style="width: 28px; height: 28px; object-fit: contain;">
+                <img src="<?= BASE_URL ?>assets/images/logo.png" alt="Logo" style="width: 28px; height: 28px; object-fit: contain;">
                 <span class="text-white">Admin<span style="font-weight:300; color: #a0a4b8;">Panel</span></span>
             </div>
             <div class="list-group list-group-flush mt-4">

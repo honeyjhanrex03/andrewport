@@ -12,7 +12,7 @@ $cv_path = $profile['cv_path'] ?? '';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?= htmlspecialchars($profile['name'] ?? 'Portfolio') ?> - Resume / CV</title>
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/andrew/assets/images/logo.png">
+    <link rel="icon" type="image/png" href="<?= BASE_URL ?>assets/images/logo.png">
     <style>
         body, html {
             margin: 0;
@@ -53,8 +53,9 @@ $cv_path = $profile['cv_path'] ?? '';
         <div class="error-msg">
             <h2>Resume not available.</h2>
             <p>The CV document has not been uploaded yet.</p>
-            <a href="/andrew/" class="btn-back">Return to Portfolio</a>
+            <a href="<?= BASE_URL ?>" class="btn-back">Return to Portfolio</a>
         </div>
     <?php endif; ?>
 </body>
 </html>
+

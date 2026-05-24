@@ -26,7 +26,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login</title>
-    <link rel="icon" type="image/png" href="/andrew/assets/images/logo.png?v=<?= time() ?>">
+    <link rel="icon" type="image/png" href="<?= BASE_URL ?>assets/images/logo.png?v=<?= time() ?>">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -42,7 +42,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
 <body>
     <div class="login-card">
         <div class="text-center mb-4">
-            <img src="/andrew/assets/images/logo.png" alt="Logo" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
+            <img src="<?= BASE_URL ?>assets/images/logo.png" alt="Logo" style="width: 60px; height: 60px; object-fit: contain; margin-bottom: 10px;">
             <h3 class="fw-bold m-0 text-white">Admin<span style="color: #a0a4b8; font-weight: 300;">Panel</span></h3>
         </div>
         <?php if($error): ?>

@@ -19,7 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_profile'])) {
         if (in_array(strtolower($ext), ['pdf', 'doc', 'docx'])) {
             $filename = 'cv_' . time() . '.' . $ext;
             if (move_uploaded_file($_FILES['cv_file']['tmp_name'], '../assets/' . $filename)) {
-                $cv_path = '/andrew/assets/' . $filename;
+                $cv_path = BASE_URL . 'assets/' . $filename;
             }
         }
     }
@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_profile'])) {
         if (in_array(strtolower($ext), ['jpg', 'jpeg', 'png', 'webp'])) {
             $filename = 'profile_' . time() . '.' . $ext;
             if (move_uploaded_file($_FILES['profile_image']['tmp_name'], '../assets/images/' . $filename)) {
-                $img_path = '/andrew/assets/images/' . $filename;
+                $img_path = BASE_URL . 'assets/images/' . $filename;
             }
         }
     }
@@ -149,3 +149,4 @@ if (!$profile) {
 </div>
 
 <?php require_once 'includes/footer.php'; ?>
+

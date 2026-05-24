@@ -6,7 +6,7 @@ function uploadFile($fileInput, $uploadDir = '../assets/images/') {
         $filename = uniqid() . '.' . $ext;
         if (!is_dir($uploadDir)) mkdir($uploadDir, 0777, true);
         if (move_uploaded_file($_FILES[$fileInput]['tmp_name'], $uploadDir . $filename)) {
-            return '/andrew/assets/images/' . $filename;
+            return BASE_URL . 'assets/images/' . $filename;
         }
     }
     return false;
