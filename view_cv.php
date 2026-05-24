@@ -3,7 +3,7 @@ require_once 'config/database.php';
 
 $stmt = $pdo->query("SELECT cv_path, name FROM profile LIMIT 1");
 $profile = $stmt->fetch();
-$cv_path = $profile['cv_path'] ?? '';
+$cv_path = get_asset_url($profile['cv_path'] ?? '');
 ?>
 <!DOCTYPE html>
 <html lang="en">
