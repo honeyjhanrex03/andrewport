@@ -225,3 +225,4 @@ $portfolios = $port_stmt->fetchAll();
 </style>
 
 <?php require_once 'includes/footer.php'; ?>
+

@@ -28,7 +28,8 @@ $skills = $skills_stmt->fetchAll();
                 <div class="hero-img-container">
                     <div class="hero-img-bg"></div>
                     <?php 
-                    $img_src = !empty($profile['profile_image']) ? htmlspecialchars($profile['profile_image']) : '/andrew/assets/images/andrew.jpg';
+                    $raw_img = !empty($profile['profile_image']) ? $profile['profile_image'] : '/andrew/assets/images/andrew.jpg';
+                    $img_src = htmlspecialchars(str_replace('/andrew/', BASE_URL, $raw_img));
                     ?>
                     <img src="<?= $img_src ?>" alt="<?= htmlspecialchars($profile['name']) ?>" class="hero-img" onerror="this.src='https://via.placeholder.com/400x400/1e212b/ffffff?text=Profile+Image'">
                 </div>
